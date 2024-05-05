@@ -17,5 +17,9 @@ provider "ec" {
 }
 
 provider "elasticstack" {
-  # Configuration options
+  elasticsearch {
+    username  = ec_deployment.k8s_observability.elasticsearch_username
+    password  = ec_deployment.k8s_observability.elasticsearch_password
+    endpoints = [ec_deployment.k8s_observability.elasticsearch.https_endpoint]
+  }
 }
