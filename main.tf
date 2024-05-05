@@ -18,6 +18,7 @@ resource "ec_deployment" "k8s_observability" {
   }
 
   kibana = {}
+  integrations_server = {}
 
   # Optional observability settings
   observability = {
