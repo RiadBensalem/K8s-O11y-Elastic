@@ -7,7 +7,6 @@ resource "ec_deployment" "k8s_observability" {
   # Optional name.
   name = "k8s_observability"
 
-  # Mandatory fields
   region                 = "eu-west-1"
   version                = data.ec_stack.latest.version
   deployment_template_id = "aws-storage-optimized"
