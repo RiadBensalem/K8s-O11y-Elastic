@@ -29,3 +29,9 @@ resource "ec_deployment" "k8s_observability" {
     "monitoring" = "source"
   }
 }
+
+
+module "obsrv-cluster" {
+  source = "./modules/obsrv-cluster"
+}
+
