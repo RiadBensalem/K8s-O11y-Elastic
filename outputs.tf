@@ -1,5 +1,5 @@
 output "elasticsearch_endpoint" {
-  value = ec_deployment.k8s_observability.elasticsearch[0].https_endpoint
+  value = ec_deployment.k8s_observability.elasticsearch.https_endpoint
 }
 
 output "elasticsearch_username" {
@@ -12,6 +12,6 @@ output "elasticsearch_password" {
 }
 
 output "kibana_endpoint" {
-  value = ec_deployment.k8s_observability.kibana[0].https_endpoint
+  value = ec_deployment.k8s_observability.kibana.https_endpoint
 }
 
