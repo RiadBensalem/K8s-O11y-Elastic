@@ -22,4 +22,9 @@ provider "elasticstack" {
     password  = ec_deployment.k8s_observability.elasticsearch_password
     endpoints = [ec_deployment.k8s_observability.elasticsearch.https_endpoint]
   }
+  kibana {
+    username  = ec_deployment.k8s_observability.elasticsearch_username
+    password  = ec_deployment.k8s_observability.elasticsearch_password
+    endpoints = [ec_deployment.k8s_observability.kibana.https_endpoint]
+  }
 }
