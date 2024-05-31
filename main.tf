@@ -31,7 +31,7 @@ resource "ec_deployment" "k8s_observability" {
 }
 
 
-
+/*
 
 resource "elasticstack_fleet_agent_policy" "test_policy" {
   name            = "Test Policy"
@@ -41,3 +41,4 @@ resource "elasticstack_fleet_agent_policy" "test_policy" {
   monitor_logs    = true
   monitor_metrics = true
 }
+*/
