@@ -4,7 +4,7 @@ data "ec_stack" "latest" {
 }
 
 resource "ec_deployment" "k8s_observability" {
-  # Optional name.
+  
   name = "k8s_observability"
 
   region                 = "eu-west-1"
@@ -33,11 +33,3 @@ resource "ec_deployment" "k8s_observability" {
 
 
 
-resource "elasticstack_fleet_agent_policy" "test_policy" {
-  name            = "Test Policy"
-  namespace       = "default"
-  description     = "Test Agent Policy"
-  sys_monitoring  = true
-  monitor_logs    = true
-  monitor_metrics = true
-}
