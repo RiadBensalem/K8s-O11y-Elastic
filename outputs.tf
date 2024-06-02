@@ -15,6 +15,10 @@ output "kibana_endpoint" {
   value = ec_deployment.k8s_observability.kibana.https_endpoint
 }
 
+output "kibana_endpoint" {
+  value = ec_deployment.k8s_observability.integrations_server.endpoints.fleet
+}
+
 
 output "enrollment_tokens" {
   value = data.elasticstack_fleet_enrollment_tokens.k8s_monitoring_et.tokens
