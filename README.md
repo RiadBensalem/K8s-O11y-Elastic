@@ -2,4 +2,6 @@
 
 description
 
+waitress-serve --host 127.0.0.1 api:app
 
+ngrok http --domain=diverse-truly-polecat.ngrok-free.app 8080
