@@ -67,8 +67,12 @@ def generate_config(values: str,template: str,final_config_file="./elastic-agent
         data=json.load(fp)
         outputs=data["planned_values"]["outputs"]
         outputs_changes=data["output_changes"] 
+        try: 
+            fleet_endpoint = outputs["fleet_endpoint"]["value"]
+        except:
+            fleet_endpoint = "https://k8s-observability.fleet.eu-west-1.aws.found.io"
         variables = {
-        "fleet_endpoint":outputs["fleet_endpoint"]["value"],
+        "fleet_endpoint":fleet_endpoint,
         "enrollment_token":outputs_changes["enrollment_tokens"]["before"][0]["api_key"]
         }
         config = open(template, 'r')
