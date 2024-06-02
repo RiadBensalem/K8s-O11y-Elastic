@@ -47,11 +47,6 @@ resource "elasticstack_fleet_agent_policy" "k8s_monitoring_policy" {
   monitor_metrics = true
 }
 
-data "elasticstack_fleet_enrollment_tokens" "k8s_monitoring_et" {
-  policy_id = elasticstack_fleet_agent_policy.k8s_monitoring_policy.policy_id
-}
-
-
 resource "elasticstack_fleet_integration_policy" "fleet_integration_policy" {
   name                = "k8s Integration Policy"
   namespace           = "default"
@@ -59,4 +54,8 @@ resource "elasticstack_fleet_integration_policy" "fleet_integration_policy" {
   agent_policy_id     = elasticstack_fleet_agent_policy.k8s_monitoring_policy.policy_id
   integration_name    = elasticstack_fleet_integration.k8s_integration.name
   integration_version = elasticstack_fleet_integration.k8s_integration.version
+}
+
+data "elasticstack_fleet_enrollment_tokens" "k8s_monitoring_et" {
+  policy_id = elasticstack_fleet_agent_policy.k8s_monitoring_policy.policy_id
 }
