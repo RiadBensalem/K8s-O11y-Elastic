@@ -15,7 +15,7 @@ output "kibana_endpoint" {
   value = ec_deployment.k8s_observability.kibana.https_endpoint
 }
 
-output "kibana_endpoint" {
+output "fleet_endpoint" {
   value = ec_deployment.k8s_observability.integrations_server.endpoints.fleet
 }
 
